@@ -9,7 +9,7 @@
 		<link href="css/demo.css" rel="stylesheet">
 	</head>
 	<body>
-
+	 Lats : <div id="lats" style="color:#fff;"></div>&nbsp;&nbsp;&nbsp;Longs : <div id="longs" style="color:#fff;"></div>
 	<div id="google_canvas"></div>
 	
 		<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
@@ -29,6 +29,9 @@
 		    	map = new google.maps.Map(document.getElementById('google_canvas'), mapOptions);
 	    	
 	    		navigator.geolocation.getCurrentPosition(function(position) {
+				
+				document.getElementById('lats').innerHTML=position.coords.latitude;
+				document.getElementById('longs').innerHTML=position.coords.longitude;
 	    		
 		    		var geolocate = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		    		
